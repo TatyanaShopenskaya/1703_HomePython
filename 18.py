@@ -25,15 +25,4 @@ if N > 0:
 else:  
     print('Вы ввели неверное количество элементов')
     
-    
-
-     
-
-
-
-
-
-#b=[abs(a[i]-x) for i in range(len(a))]
-#print(a[b.index(min(b))])
-    
  
