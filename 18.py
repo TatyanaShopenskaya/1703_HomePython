@@ -8,20 +8,21 @@
 
 
 from random import randint
+array=[]
 N=int(input('Введите количество элементов в массиве - '))
-list_1 = [randint(1,15) for i in range(N)]
-print(list_1)
+array = [randint(1,9) for i in range(N)]
+print(array)
 
 if N > 0:
     x = int(input('Задайте число x - '))  
-    min = abs(x - list_1[0])        # abs - функция, возвращающая абсолютное значение числа
-    index = 0
-    for i in range(1,N):
-        number = abs(x - list_1[i])
-        if number < min:
-            min = number
-            index = i
-    print(list_1[index])
+    min_diff = abs(x - array[0])        #мин.разница(abs - функция, возвращающая абсолютное значение числа / модули)
+    num_min_diff = array[0]
+    for num in array[1:]:
+        current_diff = abs(x - num) #текущая разница
+        if current_diff < min_diff:
+            min_diff = current_diff
+            num_min_diff = num
+    print(f'{num_min_diff} наиболее близко к {x}')
 else:  
     print('Вы ввели неверное количество элементов')
     
