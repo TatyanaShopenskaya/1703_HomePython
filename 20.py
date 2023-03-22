@@ -11,7 +11,12 @@ arrayScrubble = {'AEIOULNSTR': '1', 'DG': '2', 'BCMP': '3', 'FHVWY':'4',     #п
                 'K':'5', 'JX':'8','QZ':'10','АВЕИНОРСТ':'1','ДКЛМПУ':'2',
                 'БГЁЬЯ':'3','ЙЫ':'4','ЖЗХЦЧ':'5','ШЭЮ':'8','ФЩЪ':'10'}
 print(arrayScrubble)
-scrabble = input('Введите слово на Eng или Rus').upper() #apper - для преобразования в верхний регистр
+scrabble = input('Введите слово на Eng или Rus - ').upper() #apper - для преобразования в верхний регистр
+print(scrabble)
 
-#flagEng = True
-#flagRus = True
+sum=0      #подсчет очков
+for letter in scrabble:
+    for key, value in arrayScrubble.items():
+        if letter in key:
+            sum+=int(value)
+print(sum)
